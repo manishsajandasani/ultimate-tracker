@@ -12,12 +12,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Categories</h1>
+                        <h1 class="m-0">Task Categories</h1>
                     </div>
                     <div class="col-sm-6">
                         <div class="text-right">
-                            <a href="{{ route('admin.categories.create') }}" class="btn btn-success">
-                                Add Category
+                            <a href="{{ route('admin.task.categories.create') }}" class="btn btn-success">
+                                Add Task Category
                             </a>
                         </div>
                     </div>
@@ -31,14 +31,14 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">All Categories Listing</h3>
+                                <h3 class="card-title">All Task Categories Listing</h3>
                             </div>
                             <div class="card-body">
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
                                             <th class="text-center">#</th>
-                                            <th class="text-center">Category Name</th>
+                                            <th class="text-center">Task Category Name</th>
                                             <th class="text-center">Is Active?</th>
                                             <th class="text-center">Actions</th>
                                         </tr>
@@ -52,7 +52,7 @@
                                                     {{ $category->is_active == 1 ? 'Yes' : 'No' }}
                                                 </td>
                                                 <td class="align-middle text-center">
-                                                    <a href="{{ route('admin.categories.edit', ['the_id' => $category->id]) }}"
+                                                    <a href="{{ route('admin.task.categories.edit', ['the_id' => $category->id]) }}"
                                                         class="btn btn-warning">
                                                         <i class="fas fa-pencil-alt"></i>
                                                     </a>
@@ -63,7 +63,7 @@
                                     <tfoot>
                                         <tr>
                                             <th class="text-center">#</th>
-                                            <th class="text-center">Category Name</th>
+                                            <th class="text-center">Task Category Name</th>
                                             <th class="text-center">Is Active?</th>
                                             <th class="text-center">Actions</th>
                                         </tr>

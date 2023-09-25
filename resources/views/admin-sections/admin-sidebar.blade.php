@@ -29,27 +29,27 @@
                     </a>
                 </li>
 
-                <li class="nav-item {{ active_tab1() == 'admin-categories' ? 'menu-is-opening menu-open' : '' }}">
-                    <a href="#!" class="nav-link {{ active_tab1() == 'admin-categories' ? 'active' : '' }}">
+                <li class="nav-item {{ active_tab1() == 'admin-task-categories' ? 'menu-is-opening menu-open' : '' }}">
+                    <a href="#!" class="nav-link {{ active_tab1() == 'admin-task-categories' ? 'active' : '' }}">
                         <i class="nav-icon far fa-hospital"></i>
                         <p>
-                            Categories
+                            Task Categories
                             <i class="right fas fa-angle-right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('admin.categories.index') }}"
-                                class="nav-link {{ active_tab2() == 'admin.categories.index' ? 'active' : '' }}">
+                            <a href="{{ route('admin.task.categories.index') }}"
+                                class="nav-link {{ active_tab2() == 'admin.task.categories.index' ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>All Categories</p>
+                                <p>All Task Categories</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('admin.categories.create') }}"
-                                class="nav-link {{ active_tab2() == 'admin.categories.create' ? 'active' : '' }}">
+                            <a href="{{ route('admin.task.categories.create') }}"
+                                class="nav-link {{ active_tab2() == 'admin.task.categories.create' ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Add Category</p>
+                                <p>Add Task Category</p>
                             </a>
                         </li>
                     </ul>

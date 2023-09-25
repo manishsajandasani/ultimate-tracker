@@ -6,12 +6,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Edit Category</h1>
+                        <h1 class="m-0">Edit Task Category</h1>
                     </div>
                     <div class="col-sm-6">
                         <div class="text-right">
-                            <a href="{{ route('admin.categories.index') }}" class="btn btn-success">
-                                Categories List
+                            <a href="{{ route('admin.task.categories.index') }}" class="btn btn-success">
+                                Task Categories List
                             </a>
                         </div>
                     </div>
@@ -25,15 +25,16 @@
                     <div class="col-md-6">
                         <div class="card card-success">
                             <div class="card-header">
-                                <h3 class="card-title">Edit Category Form</h3>
+                                <h3 class="card-title">Edit Task Category Form</h3>
                             </div>
-                            <form class="form-horizontal" action="{{ route('admin.categories.update', $category->id) }}"
-                                method="POST" enctype="multipart/form-data">
+                            <form class="form-horizontal"
+                                action="{{ route('admin.task.categories.update', $category->id) }}" method="POST"
+                                enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="card-body">
                                     <div class="form-group row">
-                                        <label for="cat_name" class="col-sm-4 col-form-label">Category Name</label>
+                                        <label for="cat_name" class="col-sm-4 col-form-label">Task Category Name</label>
                                         <div class="col-sm-8">
                                             <input type="text" class="form-control" name="cat_name" id="cat_name"
                                                 value="{{ $category->cat_name }}">
