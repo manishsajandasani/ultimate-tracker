@@ -4,122 +4,142 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Category;
+use App\Models\TaskCategory;
 
-class CategorySeeder extends Seeder
+class TaskCategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $categories = collect(
+        $taskCategories = collect(
             [
                 [
                     "id" => 1,
-                    "cat_name" => "SISTec",
+                    "user_id" => 1,
+                    "task_category_name" => "SISTec",
                     "is_active" => 1
                 ],
                 [
                     "id" => 2,
-                    "cat_name" => "SISTec-GN",
+                    "user_id" => 1,
+                    "task_category_name" => "SISTec-GN",
                     "is_active" => 1
                 ],
                 [
                     "id" => 3,
-                    "cat_name" => "SISTec-R",
+                    "user_id" => 1,
+                    "task_category_name" => "SISTec-R",
                     "is_active" => 1
                 ],
                 [
                     "id" => 4,
-                    "cat_name" => "SISTec-E",
+                    "user_id" => 1,
+                    "task_category_name" => "SISTec-E",
                     "is_active" => 1
                 ],
                 [
                     "id" => 5,
-                    "cat_name" => "SISTec-MBA",
+                    "user_id" => 1,
+                    "task_category_name" => "SISTec-MBA",
                     "is_active" => 1
                 ],
                 [
                     "id" => 6,
-                    "cat_name" => "SIPTec",
+                    "user_id" => 1,
+                    "task_category_name" => "SIPTec",
                     "is_active" => 1
                 ],
                 [
                     "id" => 7,
-                    "cat_name" => "SPS-Bhopal",
+                    "user_id" => 1,
+                    "task_category_name" => "SPS-Bhopal",
                     "is_active" => 1
                 ],
                 [
                     "id" => 8,
-                    "cat_name" => "SPS-SN",
+                    "user_id" => 1,
+                    "task_category_name" => "SPS-SN",
                     "is_active" => 1
                 ],
                 [
                     "id" => 9,
-                    "cat_name" => "SPS-GN",
+                    "user_id" => 1,
+                    "task_category_name" => "SPS-GN",
                     "is_active" => 1
                 ],
                 [
                     "id" => 10,
-                    "cat_name" => "SPS-RN",
+                    "user_id" => 1,
+                    "task_category_name" => "SPS-RN",
                     "is_active" => 1
                 ],
                 [
                     "id" => 11,
-                    "cat_name" => "SPS-RB",
+                    "user_id" => 1,
+                    "task_category_name" => "SPS-RB",
                     "is_active" => 1
                 ],
                 [
                     "id" => 12,
-                    "cat_name" => "SPS-KE",
+                    "user_id" => 1,
+                    "task_category_name" => "SPS-KE",
                     "is_active" => 1
                 ],
                 [
                     "id" => 13,
-                    "cat_name" => "SPS-DD",
+                    "user_id" => 1,
+                    "task_category_name" => "SPS-DD",
                     "is_active" => 1
                 ],
                 [
                     "id" => 14,
-                    "cat_name" => "Sagar Manufacturers Pvt. Ltd.",
+                    "user_id" => 1,
+                    "task_category_name" => "Sagar Manufacturers Pvt. Ltd.",
                     "is_active" => 1
                 ],
                 [
                     "id" => 15,
-                    "cat_name" => "Sagar Nutriments Pvt. Ltd.",
+                    "user_id" => 1,
+                    "task_category_name" => "Sagar Nutriments Pvt. Ltd.",
                     "is_active" => 1
                 ],
                 [
                     "id" => 16,
-                    "cat_name" => "The Sagar",
+                    "user_id" => 1,
+                    "task_category_name" => "The Sagar",
                     "is_active" => 1
                 ],
                 [
                     "id" => 17,
-                    "cat_name" => "Sagar Multispeciality Hospital",
+                    "user_id" => 1,
+                    "task_category_name" => "Sagar Multispeciality Hospital",
                     "is_active" => 1
                 ],
                 [
                     "id" => 18,
-                    "cat_name" => "Accounts ERP",
+                    "user_id" => 1,
+                    "task_category_name" => "Accounts ERP",
                     "is_active" => 1
                 ],
                 [
                     "id" => 19,
-                    "cat_name" => "Admissions ERP",
+                    "user_id" => 1,
+                    "task_category_name" => "Admissions ERP",
                     "is_active" => 1
                 ],
                 [
                     "id" => 20,
-                    "cat_name" => "Lead Management System",
+                    "user_id" => 1,
+                    "task_category_name" => "Lead Management System",
                     "is_active" => 1
                 ]
             ]
         );
 
-        $categories->each(function ($category) {
-            category::insert($category);
+        $taskCategories->each(function ($taskCategory) {
+            TaskCategory::insert($taskCategory);
         });
     }
 }

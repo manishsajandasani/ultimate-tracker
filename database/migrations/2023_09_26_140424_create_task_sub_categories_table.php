@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('task_sub_categories', function (Blueprint $table) {
             $table->id();
-            $table->string("cat_name", 100)->unique();
+            $table->smallInteger("task_category_id");
+            $table->string("task_sub_category_name", 100);
             $table->tinyInteger('is_active')->default(1);
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('task_sub_categories');
     }
 };

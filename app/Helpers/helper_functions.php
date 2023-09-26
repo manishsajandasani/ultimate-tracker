@@ -16,3 +16,7 @@ function active_tab2()
 {
     return session('tab2');
 }
+
+function get_current_user_id() {
+    return session('userid');
+}

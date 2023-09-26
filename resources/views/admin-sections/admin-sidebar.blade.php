@@ -54,6 +54,34 @@
                         </li>
                     </ul>
                 </li>
+
+                <li
+                    class="nav-item {{ active_tab1() == 'admin-task-sub-categories' ? 'menu-is-opening menu-open' : '' }}">
+                    <a href="#!"
+                        class="nav-link {{ active_tab1() == 'admin-task-sub-categories' ? 'active' : '' }}">
+                        <i class="nav-icon far fa-hospital"></i>
+                        <p>
+                            Task Sub Categories
+                            <i class="right fas fa-angle-right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.task.sub.categories.index') }}"
+                                class="nav-link {{ active_tab2() == 'admin.task.sub.categories.index' ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>All Task Sub Categories</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.task.sub.categories.create') }}"
+                                class="nav-link {{ active_tab2() == 'admin.task.sub.categories.create' ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add Task Sub Category</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </div>

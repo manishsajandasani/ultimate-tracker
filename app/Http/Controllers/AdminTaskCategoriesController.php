@@ -10,8 +10,8 @@ class AdminTaskCategoriesController extends Controller
 {      
     public function task_categories_index() {
         active_tabs("admin-task-categories", Route::currentRouteName());
-        $result_data = DB::table('categories')->get();
-        return view("back.task-categories.admin-task-categories")->with("categories", $result_data);
+        $result_data = DB::table('task_categories')->get();
+        return view("back.task-categories.admin-task-categories")->with("taskCategories", $result_data);
     }
 
     public function task_categories_create() {
@@ -21,17 +21,18 @@ class AdminTaskCategoriesController extends Controller
 
     public function task_categories_store(Request $request) {
         $request->validate([
-            "cat_name" => "required",
+            "task_category_name" => "required",
             "is_active" => "required",
         ]);        
 
-        $entity = DB::table('categories')->insert([
-            'cat_name' => $request->cat_name,
-            'is_active' => $request->is_active,
+        $entity = DB::table('task_categories')->insert([
+            "user_id" => get_current_user_id(),
+            "task_category_name" => $request->task_category_name,
+            "is_active" => $request->is_active,
         ]);
 
         if($entity) {
-            return redirect()->route('admin.task.categories.index')->with('entity-added-success', 'category Added Successfully');
+            return redirect()->route('admin.task.categories.index')->with('entity-added-success', 'Task Category Added Successfully');
         }
 
         return redirect()->route('admin.task.categories.index')->with('operation-fail', 'Something went wrong!');
@@ -39,25 +40,26 @@ class AdminTaskCategoriesController extends Controller
 
     public function task_categories_edit($the_id) {
         active_tabs("admin-task-categories", Route::currentRouteName());        
-        $entity = DB::table('categories')->where(['id' => $the_id])->first();
+        $entity = DB::table('task_categories')->where(['id' => $the_id])->first();
         return view("back.task-categories.admin-edit-task-category")->with('category', $entity);
     }
 
     public function task_categories_update(Request $request, $the_id) {        
         $request->validate([
-            "cat_name" => "required",
+            "task_category_name" => "required",
             "is_active" => "required",
         ]);
 
         $dataToUpdate = [
-            "cat_name" => $request->cat_name,
+            "user_id" => get_current_user_id(),
+            "task_category_name" => $request->task_category_name,
             "is_active" => $request->is_active,
         ];
         
-        $entity_updated = DB::table('categories')->where('id', $the_id)->update($dataToUpdate);
+        $entity_updated = DB::table('task_categories')->where('id', $the_id)->update($dataToUpdate);
 
         if($entity_updated) {
-            return redirect()->route('admin.task.categories.index')->with('entity-updated-success', 'Category Updated Successfully');
+            return redirect()->route('admin.task.categories.index')->with('entity-updated-success', 'Task Category Updated Successfully');
         }
 
         return redirect()->route('admin.task.categories.index')->with('operation-fail', 'Something went wrong!');

@@ -12,12 +12,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Task Categories</h1>
+                        <h1 class="m-0">Task Sub Categories</h1>
                     </div>
                     <div class="col-sm-6">
                         <div class="text-right">
-                            <a href="{{ route('admin.task.categories.create') }}" class="btn btn-success">
-                                Add Task Category
+                            <a href="{{ route('admin.task.sub.categories.create') }}" class="btn btn-success">
+                                Add Task Sub Category
                             </a>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">All Task Categories Listing</h3>
+                                <h3 class="card-title">All Task Sub Categories Listing</h3>
                             </div>
                             <div class="card-body">
                                 <table id="example1" class="table table-bordered table-striped">
@@ -39,6 +39,7 @@
                                         <tr>
                                             <th class="text-center">#</th>
                                             <th class="text-center">Task Category Name</th>
+                                            <th class="text-center">Task Sub Category Name</th>
                                             <th class="text-center">Is Active?</th>
                                             <th class="text-center">Actions</th>
                                         </tr>
@@ -48,6 +49,8 @@
                                             <tr>
                                                 <th class="align-middle text-center">{{ $loop->iteration }}</th>
                                                 <td class="align-middle text-center">{{ $category->task_category_name }}
+                                                </td>
+                                                <td class="align-middle text-center">{{ $category->task_sub_category_name }}
                                                 </td>
                                                 <td class="align-middle text-center">
                                                     {{ $category->is_active == 1 ? 'Yes' : 'No' }}
@@ -64,7 +67,8 @@
                                     <tfoot>
                                         <tr>
                                             <th class="text-center">#</th>
-                                            <th class="text-center">Task Category Name</th>
+                                            <th class="text-center">Task Category ID</th>
+                                            <th class="text-center">Task Sub Category Name</th>
                                             <th class="text-center">Is Active?</th>
                                             <th class="text-center">Actions</th>
                                         </tr>

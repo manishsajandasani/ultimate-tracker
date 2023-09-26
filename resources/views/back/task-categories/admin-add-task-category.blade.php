@@ -33,12 +33,14 @@
 
                                 <div class="card-body">
                                     <div class="form-group row">
-                                        <label for="cat_name" class="col-sm-4 col-form-label">Task Category Name</label>
+                                        <label for="task_category_name" class="col-sm-4 col-form-label">Task Category
+                                            Name</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" name="cat_name" id="cat_name"
-                                                placeholder="Enter Task Category Name" value="{{ old('cat_name') }}">
+                                            <input type="text" class="form-control" name="task_category_name"
+                                                id="task_category_name" placeholder="Enter Task Category Name"
+                                                value="{{ old('task_category_name') }}">
                                             <p class="text-danger mt-1 mb-0">
-                                                @error('cat_name')
+                                                @error('task_category_name')
                                                     {{ $message }}
                                                 @enderror
                                             </p>
