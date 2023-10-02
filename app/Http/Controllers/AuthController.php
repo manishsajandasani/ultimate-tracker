@@ -28,7 +28,7 @@ class AuthController extends Controller
                 Session::put('useremail', $user->email);
                 Session::put('userrole', $user->role);
                 Session::put('useractive', $user->is_active);
-                return redirect()->route('admin.dashboard');
+                return redirect()->route('admin.task.dashboard');
             } else {
                 return back()->withInput()->with('invalid-credentials', "Password is not correct."); 
             }

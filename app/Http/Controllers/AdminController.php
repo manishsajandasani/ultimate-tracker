@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
-    public function dashboard() {
-        active_tabs("dashboard", Route::currentRouteName());
-        return view("back.pages.admin-dashboard");
+    public function task_dashboard() {
+        active_tabs("task-dashboard", Route::currentRouteName());
+        return view("back.pages.admin-task-dashboard");
     }
 }

@@ -1,5 +1,5 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <a href="index3.html" class="brand-link">
+    <a href="{{ route('admin.task.dashboard') }}" class="btn brand-link d-flex">
         <img src="{{ asset('admin/dist/img/AdminLTELogo.png') }}" class="brand-image img-circle elevation-3"
             style="opacity: .8">
         <span class="brand-text font-weight-light">{{ Config::get('global.website_name') }}</span>
@@ -20,67 +20,63 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
                 <li class="nav-item">
-                    <a href="{{ route('admin.dashboard') }}"
-                        class="nav-link {{ active_tab1() == 'dashboard' ? 'active' : '' }}">
+                    <a href="{{ route('admin.task.dashboard') }}"
+                        class="nav-link {{ active_tab1() == 'task-dashboard' ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Dashboard
+                            Task Dashboard
                         </p>
                     </a>
                 </li>
 
-                <li class="nav-item {{ active_tab1() == 'admin-task-categories' ? 'menu-is-opening menu-open' : '' }}">
-                    <a href="#!" class="nav-link {{ active_tab1() == 'admin-task-categories' ? 'active' : '' }}">
-                        <i class="nav-icon far fa-hospital"></i>
+                <li class="nav-item">
+                    <a href="{{ route('admin.task.categories.index') }}"
+                        class="nav-link {{ active_tab1() == 'admin-task-categories' ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-tasks"></i>
                         <p>
                             Task Categories
-                            <i class="right fas fa-angle-right"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('admin.task.categories.index') }}"
-                                class="nav-link {{ active_tab2() == 'admin.task.categories.index' ? 'active' : '' }}">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>All Task Categories</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin.task.categories.create') }}"
-                                class="nav-link {{ active_tab2() == 'admin.task.categories.create' ? 'active' : '' }}">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Add Task Category</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
 
-                <li
-                    class="nav-item {{ active_tab1() == 'admin-task-sub-categories' ? 'menu-is-opening menu-open' : '' }}">
-                    <a href="#!"
+                <li class="nav-item">
+                    <a href="{{ route('admin.task.sub.categories.index') }}"
                         class="nav-link {{ active_tab1() == 'admin-task-sub-categories' ? 'active' : '' }}">
-                        <i class="nav-icon far fa-hospital"></i>
+                        <i class="nav-icon fas fa-tasks"></i>
                         <p>
                             Task Sub Categories
-                            <i class="right fas fa-angle-right"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('admin.task.sub.categories.index') }}"
-                                class="nav-link {{ active_tab2() == 'admin.task.sub.categories.index' ? 'active' : '' }}">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>All Task Sub Categories</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin.task.sub.categories.create') }}"
-                                class="nav-link {{ active_tab2() == 'admin.task.sub.categories.create' ? 'active' : '' }}">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Add Task Sub Category</p>
-                            </a>
-                        </li>
-                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('admin.task.assigned.by.index') }}"
+                        class="nav-link {{ active_tab1() == 'admin-task-assigned-by' ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-tasks"></i>
+                        <p>
+                            Task Assigned By
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('admin.statuses.index') }}"
+                        class="nav-link {{ active_tab1() == 'admin-statuses' ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-tasks"></i>
+                        <p>
+                            Statuses
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('admin.priorities.index') }}"
+                        class="nav-link {{ active_tab1() == 'admin-priorities' ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-tasks"></i>
+                        <p>
+                            Priorities
+                        </p>
+                    </a>
                 </li>
             </ul>
         </nav>

@@ -24,9 +24,6 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card card-success">
-                            <div class="card-header">
-                                <h3 class="card-title">Edit Task Category Form</h3>
-                            </div>
                             <form class="form-horizontal"
                                 action="{{ route('admin.task.categories.update', $category->id) }}" method="POST"
                                 enctype="multipart/form-data">

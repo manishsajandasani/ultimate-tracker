@@ -12,12 +12,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Task Sub Categories</h1>
+                        <h1 class="m-0">Task Assigned By</h1>
                     </div>
                     <div class="col-sm-6">
                         <div class="text-right">
-                            <a href="{{ route('admin.task.sub.categories.create') }}" class="btn btn-success">
-                                Add Task Sub Category
+                            <a href="{{ route('admin.task.assigned.by.create') }}" class="btn btn-success">
+                                Add Task Assigned By
                             </a>
                         </div>
                     </div>
@@ -35,25 +35,23 @@
                                     <thead>
                                         <tr>
                                             <th class="text-center">#</th>
-                                            <th class="text-center">Task Category Name</th>
-                                            <th class="text-center">Task Sub Category Name</th>
+                                            <th class="text-center">Task Assigned By Name</th>
                                             <th class="text-center">Is Active?</th>
                                             <th class="text-center">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($taskCategories as $category)
+                                        @foreach ($taskAssignedBy as $assignedBy)
                                             <tr>
                                                 <th class="align-middle text-center">{{ $loop->iteration }}</th>
-                                                <td class="align-middle text-center">{{ $category->task_category_name }}
-                                                </td>
-                                                <td class="align-middle text-center">{{ $category->task_sub_category_name }}
+                                                <td class="align-middle text-center">
+                                                    {{ $assignedBy->task_assigned_by_name }}
                                                 </td>
                                                 <td class="align-middle text-center">
-                                                    {{ $category->is_active == 1 ? 'Yes' : 'No' }}
+                                                    {{ $assignedBy->is_active == 1 ? 'Yes' : 'No' }}
                                                 </td>
                                                 <td class="align-middle text-center">
-                                                    <a href="{{ route('admin.task.sub.categories.edit', ['the_id' => $category->id]) }}"
+                                                    <a href="{{ route('admin.task.assigned.by.edit', ['the_id' => $assignedBy->id]) }}"
                                                         class="btn btn-warning">
                                                         <i class="fas fa-pencil-alt"></i>
                                                     </a>
@@ -64,8 +62,7 @@
                                     <tfoot>
                                         <tr>
                                             <th class="text-center">#</th>
-                                            <th class="text-center">Task Category Name</th>
-                                            <th class="text-center">Task Sub Category Name</th>
+                                            <th class="text-center">Task Assigned By Name</th>
                                             <th class="text-center">Is Active?</th>
                                             <th class="text-center">Actions</th>
                                         </tr>
