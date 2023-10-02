@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminPrioritiesController;
 use App\Http\Controllers\AdminStatusesController;
 use App\Http\Controllers\AdminTaskAssignedByController;
 use App\Http\Controllers\AdminTaskCategoriesController;
+use App\Http\Controllers\AdminTaskEntriesController;
 use App\Http\Controllers\AdminTaskSubCategoriesController;
 
 // Admin Routing
@@ -18,7 +19,18 @@ Route::middleware('already.loggedin')->group(function () {
 });
 
 Route::middleware('is.loggedin')->group(function () {
-    Route::get('/admin-task-dashboard', [AdminController::class, 'task_dashboard'])->name('admin.task.dashboard');
+    Route::get('/task-dashboard', [AdminController::class, 'task_dashboard'])->name('admin.task.dashboard');
+
+    // Admin Task Entries Routing
+    Route::controller(AdminTaskEntriesController::class)->group(function () {
+        Route::prefix("/task-entries")->name('admin.task.entries.')->group(function () {
+            Route::get('/all', 'task_entries_index')->name('index');
+            Route::get('/create', 'task_entries_create')->name('create');
+            Route::post('/store', 'task_entries_store')->name('store');
+            Route::get('/edit/{the_id}', 'task_entries_edit')->whereNumber('the_id')->name('edit');
+            Route::post('/update/{the_id}', 'task_entries_update')->name('update');
+        });
+    });
 
     // Admin Task Categories Routing
     Route::controller(AdminTaskCategoriesController::class)->group(function () {

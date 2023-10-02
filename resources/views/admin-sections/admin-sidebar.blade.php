@@ -21,10 +21,20 @@
                 data-accordion="false">
                 <li class="nav-item">
                     <a href="{{ route('admin.task.dashboard') }}"
-                        class="nav-link {{ active_tab1() == 'task-dashboard' ? 'active' : '' }}">
+                        class="nav-link {{ active_tab1() == 'admin-task-dashboard' ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Task Dashboard
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('admin.task.entries.index') }}"
+                        class="nav-link {{ active_tab1() == 'admin-task-entries' ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-tasks"></i>
+                        <p>
+                            Task Entries
                         </p>
                     </a>
                 </li>
